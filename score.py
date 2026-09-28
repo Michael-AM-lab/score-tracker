@@ -1,4 +1,4 @@
-students = []
+students = {}
 
 # Functions
 def add_student():
@@ -37,4 +37,4 @@ def search_student():
             break
 
     if not found:
-        print("Student not found.")
+        print("Student not registerd.")
