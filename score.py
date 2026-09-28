@@ -68,4 +68,66 @@ def lowest_score():
         print(f"Score: {lowest}\n")
 
 
+students = {}
 
+while True:
+    print("\n===== Student Score Tracker =====")
+    print("1. Add student")
+    print("2. View students")
+    print("3. Search student")
+    print("4. Calculate average")
+    print("5. Highest score")
+    print("6. Lowest score")
+    print("7. Exit")
+
+    choice = input("Enter your choice (1-7): ")
+
+    if choice == "1":
+        name = input("Enter student name: ")
+        score = float(input("Enter student score: "))
+
+        students[name] = score
+        print("Student added successfully.")
+
+    elif choice == "2":
+        if not students:
+            print("No students found.")
+        else:
+            for name, score in students.items():
+                print(f"{name}: {score}")
+
+    elif choice == "3":
+        name = input("Enter student name to search: ")
+
+        if name in students:
+            print(f"{name}: {students[name]}")
+        else:
+            print("Student not found.")
+
+    elif choice == "4":
+        if not students:
+            print("No scores available.")
+        else:
+            average = sum(students.values()) / len(students)
+            print(f"Average score: {average:.2f}")
+
+    elif choice == "5":
+        if not students:
+            print("No scores available.")
+        else:
+            highest = max(students, key=students.get)
+            print(f"Highest score: {highest} - {students[highest]}")
+
+    elif choice == "6":
+        if not students:
+            print("No scores available.")
+        else:
+            lowest = min(students, key=students.get)
+            print(f"Lowest score: {lowest} - {students[lowest]}")
+
+    elif choice == "7":
+        print("Thank you for using Student Score Tracker.")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
