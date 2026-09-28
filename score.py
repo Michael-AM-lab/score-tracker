@@ -37,4 +37,35 @@ def search_student():
             break
 
     if not found:
-        print("Student not registerd.")
+        print("Student not registered.")
+
+def calculate_average():
+    if len([student["score"] for student in students]) == 0:
+        print("No scores available.\n")
+    else:
+        average = sum([student["score"] for student in students]) / len([student["score"] for student in students])
+        print(f"Average Score = {average:.2f}\n")
+
+
+def highest_score():
+    if len([student["score"] for student in students]) == 0:
+        print("No scores available.\n")
+    else:
+        highest = max([student["score"] for student in students])
+        index = [student["score"] for student in students].index(highest)
+        print(f"Highest Score")
+        print(f"Student: {students[index]}")
+        print(f"Score: {highest}\n")
+
+def lowest_score():
+    if len([student["score"] for student in students]) == 0:
+        print("No scores available.\n")
+    else:
+        lowest = min([student["score"] for student in students])
+        index = [student["score"] for student in students].index(lowest)
+        print(f"Lowest Score")
+        print(f"Student: {students[index]}")
+        print(f"Score: {lowest}\n")
+
+
+
