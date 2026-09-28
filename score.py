@@ -1,4 +1,4 @@
-students = {}
+students = []
 
 # Functions
 def add_student():
